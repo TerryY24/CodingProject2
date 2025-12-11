@@ -7,6 +7,6 @@
  *
  * @author 342927951
  */
-public class NewClass {
-    
+public class Difficulty {
+
 }
