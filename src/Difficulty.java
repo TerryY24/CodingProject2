@@ -8,5 +8,14 @@
  * @author 342927951
  */
 public class Difficulty {
+    private String level;
+    
+    public Difficulty(String level) {
+        
+    }
+    
+    public String getLevel() {
+        
+    }
 
 }
