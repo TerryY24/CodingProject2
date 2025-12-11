@@ -1,1 +1,12 @@
 news article quote here;Real;Fake;A
+Scientists discover a purple cat species that glows in the dark.;Real;Fake;B
+Local bakery sells out after launching croissant-shaped pizza.;Real;Fake;A
+NASA confirms that Mars now has breathable oxygen for humans.;Real;Fake;B
+Doctors warn people not to use toothpaste to heal sunburns.;Real;Fake;A
+Police find alligator relaxing in family’s swimming pool.;Real;Fake;A
+Government announces plan to replace all cars with flying bicycles by 2030.;Real;Fake;B
+New study says eating chocolate every day may improve brain function.;Real;Fake;A
+A man claims he time-traveled using only a microwave oven.;Real;Fake;B
+Zoo welcomes rare baby penguin born with two different-colored eyes.;Real;Fake;A
+Scientists teach dolphins to play video games using underwater controllers.;Real;Fake;A
+
