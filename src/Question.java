@@ -7,7 +7,7 @@
  *
  * @author 342883410
  */
-public abstract class Question extends Difficulty{
+public class Question extends Difficulty{
     protected String text;
     protected String optionA;
     protected String optionB;
@@ -17,6 +17,11 @@ public abstract class Question extends Difficulty{
         this.text = text;
         this.optionA = A;
         this.optionB = B;
+        this.correctAnswer = correct;
+    }
+    
+    public Question(String text, char correct){
+        this.text = text;
         this.correctAnswer = correct;
     }
     

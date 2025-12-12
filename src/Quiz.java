@@ -38,6 +38,15 @@ public class Quiz {
         try{
             Scanner fileInput = new Scanner (new File("easyq.txt"));
             
+            while (fileInput.hasNext()){
+                String output = fileInput.nextLine();
+                String[] info = output.split(",");
+                questions.add(new Question(info[0], info[1]));
+            }
+            
+            fileInput.close();
+        } catch (IOException ioException){
+            System.err.print("Error");
         }
     }
     
