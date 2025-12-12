@@ -11,11 +11,11 @@ public class Difficulty {
     private String level;
     
     public Difficulty(String level) {
-        
+        this.level = level;
     }
     
     public String getLevel() {
-        
+        return level;
     }
 
 }
