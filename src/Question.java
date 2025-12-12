@@ -7,7 +7,7 @@
  *
  * @author 342883410
  */
-public abstract class Question {
+public abstract class Question extends Difficulty{
     protected String text;
     protected String optionA;
     protected String optionB;

@@ -1,4 +1,9 @@
 import java.util.ArrayList;
+import java.io.File;
+import java.util.Scanner;
+import java.io.IOException;
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -20,6 +25,9 @@ public class Quiz {
     private static final String HARD_FILE = "hardq.txt";
     
     public Quiz(){
+        this.difficulty = new Difficulty("level");
+        this.score = 0;
+        this.currentIndex = 0;
     }
     
     public Quiz(Difficulty difficulty){
@@ -27,7 +35,10 @@ public class Quiz {
     }
     
     public void loadQuestionFromFile(String filename){
-        
+        try{
+            Scanner fileInput = new Scanner (new File("easyq.txt"));
+            
+        }
     }
     
     public void saveScore(){
@@ -46,8 +57,8 @@ public class Quiz {
        return score; 
     }
     
-    public Difficulty difficulty(){
-        
+    public Difficulty getDifficulty(){
+        return difficulty;
     }
     
     
