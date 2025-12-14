@@ -1,6 +1,7 @@
 import java.util.ArrayList;
-import java.io.File;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -17,58 +18,86 @@ import java.io.IOException;
 public class Quiz {
     private int score;
     private int currentIndex;
-    private Difficulty difficulty;
-    
     private ArrayList<Question> questions;
     
     private static final String EASY_FILE = "easyq.txt";
     private static final String HARD_FILE = "hardq.txt";
     
-    public Quiz(){
-        this.difficulty = new Difficulty("level");
-        this.score = 0;
-        this.currentIndex = 0;
+    public Quiz() {
+        this(false);
     }
     
-    public Quiz(Difficulty difficulty){
-        this.difficulty = difficulty;
-    }
-    
-    public void loadQuestionFromFile(String filename){
-        try{
-            Scanner fileInput = new Scanner (new File("easyq.txt"));
-            
-            while (fileInput.hasNext()){
-                String output = fileInput.nextLine();
-                String[] info = output.split(",");
-                questions.add(new Question(info[0], info[1]));
-            }
-            
-            fileInput.close();
-        } catch (IOException ioException){
-            System.err.print("Error");
+    public Quiz (boolean isHard) {
+        score = 0;
+        currentIndex = 0;
+        questions = new ArrayList<>();
+        
+        if (isHard) {
+            loadQuestionsFromFile(HARD_FILE);
+        } else {
+            loadQuestionsFromFile(EASY_FILE);
         }
     }
     
-    public void saveScore(){
+    public void loadQuestionsFromFile(String filename) {
+        try {
+            Scanner input = new Scanner(new File(filename));
+            
+            while (input.hasNextLine()) {
+                String line = input.nextLine();
+                Question q = parseQuestion(line, filename.equals(HARD_FILE));
+                questions.add(q);
+            }
+            
+            input.close();
+        } catch (IOException e) {
+            System.out.println("Error loading questions");
+        }
+    }
+    
+    public static Question parseQuestion(String line, boolean isHard) {
+        String[] parts = line.split(";");
+        String text = parts[0];
+        String optionA = parts[1];
+        String optionB = parts[2];
+        char correct = parts[3].charAt(0);
         
+        if (isHard) {
+            return new HardQuestion(text, optionA, optionB, correct);
+        } else {
+            return new EasyQuestion(text, optionA, optionB, correct);
+        }
     }
     
-    public void displayQuestion(){
-        
+    public Question displayQuestion() {
+        if (currentIndex < questions.size()) {
+            return questions.get(currentIndex);
+        }
+        return null; //
     }
     
-    public void checkAnswer(String choice){
-        
+    public void checkAnswer(char choice) {
+        if (currentIndex < questions.size()) {
+            Question q = questions.get(currentIndex);
+            
+            if (q.checkAnswer(choice)) {
+                score++;
+            }
+            currentIndex++;  // increment question count to keep cycling through questions
+        }
     }
     
-    public int getScore(){
-       return score; 
+    public void saveScore() {
+        try {
+            FileWriter writer = new FileWriter("results.txt", true); //create new txt file for quiz scores
+            writer.write("Score: " + score + "/" + questions.size() + "\n");
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("Error saving score");
+        }
     }
     
-    public Difficulty getDifficulty(){
-        return difficulty;
+    public int getScore() {
+        return score;
     }
-    
-    
 }

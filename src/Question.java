@@ -7,7 +7,7 @@
  *
  * @author 342883410
  */
-public class Question extends Difficulty{
+public class Question {
     protected String text;
     protected String optionA;
     protected String optionB;
@@ -20,11 +20,19 @@ public class Question extends Difficulty{
         this.correctAnswer = correct;
     }
     
-    public Question(String text, char correct){
-        this.text = text;
-        this.correctAnswer = correct;
+    public boolean checkAnswer(char ans) {
+        return ans == correctAnswer;
     }
     
-    // abstract method, so it has no body in question class, subclasses must provide
-    public abstract boolean checkAnswer(char ans);
+    public String getText() {
+        return text;
+    }
+    
+    public String getOptionA() {
+        return optionA;
+    }
+    
+    public String getOptionB() {
+        return optionB;
+    }
 }
