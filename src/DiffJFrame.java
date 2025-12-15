@@ -8,7 +8,7 @@
  * @author 342883410
  */
 public class DiffJFrame extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form DiffJFrame
      */
