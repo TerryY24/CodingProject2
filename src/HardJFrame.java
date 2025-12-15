@@ -23,6 +23,7 @@ public class HardJFrame extends javax.swing.JFrame {
         
     }
 
+    
     private void loadQuestion() {
         Question q = quiz.displayQuestion();
 
