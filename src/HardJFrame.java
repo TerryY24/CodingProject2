@@ -10,7 +10,7 @@
  */
 public class HardJFrame extends javax.swing.JFrame {
 
-    private Quiz quiz;
+    private Quiz quiz; // Create global variable of quiz
     
     /**
      * Creates new form HardJFrame
@@ -18,27 +18,35 @@ public class HardJFrame extends javax.swing.JFrame {
     public HardJFrame() {
         initComponents();
         
-        quiz = new Quiz(true);
-        loadQuestion();
+        quiz = new Quiz(true); // Create a new Quiz object in hard mode
+        loadQuestion(); // Load the first question
         
     }
 
-    
+    /**
+     * Loads questions from the class quiz
+     * 
+     */
     private void loadQuestion() {
-        Question q = quiz.displayQuestion();
+        Question q = quiz.displayQuestion(); // Calls the display method from quiz and stores it
 
+        // If statement to see if there is any more questions
         if (q == null) {
             
-            quiz.saveScore();
+            quiz.saveScore(); // Saves the final score
 
+            // Display quiz finished message for user
             jTextArea1.setText("Quiz Finished!");
+            // Display quiz score for user
             jTextField2.setText(
                 "Final Score: " + quiz.getScore()
             );
 
+            // Disables the buttons so user doesn's won't input after quiz is finished
             jButtonTrue.setEnabled(false);
             jButtonFalse.setEnabled(false);
         } else {
+            // Else statement to display the current question's text in the text area
             jTextArea1.setText(q.getText());
         }
     }
@@ -88,7 +96,11 @@ public class HardJFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.setText("jTextField2");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setLineWrap(true);
@@ -132,8 +144,7 @@ public class HardJFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 146, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -153,15 +164,20 @@ public class HardJFrame extends javax.swing.JFrame {
 
     private void jButtonTrueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTrueActionPerformed
         // TODO add your handling code here:
-        quiz.checkAnswer('A');
-        loadQuestion();
+        // Code to load methods in from different areas
+        quiz.checkAnswer('A'); // Runs checkAnswer method with parameter A from quiz class
+        loadQuestion(); // Runs loadQuestion method
     }//GEN-LAST:event_jButtonTrueActionPerformed
 
     private void jButtonFalseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFalseActionPerformed
         // TODO add your handling code here:
-        quiz.checkAnswer('B');
-        loadQuestion();
+        quiz.checkAnswer('B'); // Runs checkAnswer method with parameter B from quiz class
+        loadQuestion(); // Runs loadQuestion method
     }//GEN-LAST:event_jButtonFalseActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments

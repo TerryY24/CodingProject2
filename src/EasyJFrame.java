@@ -10,7 +10,7 @@
  */
 public class EasyJFrame extends javax.swing.JFrame {
     
-    private Quiz quiz;
+    private Quiz quiz; // Create global variable of quiz
     
     /**
      * Creates new form EasyJFrame
@@ -18,26 +18,35 @@ public class EasyJFrame extends javax.swing.JFrame {
     public EasyJFrame() {
         initComponents();
         
-        quiz = new Quiz(false);
-        loadQuestion();
+        quiz = new Quiz(false); // Create a new Quiz object in easy mode
+        loadQuestion();  // Load the first question
         
     }
     
+    /**
+     * Loads questions from the class quiz
+     *
+     */
     private void loadQuestion() {
-        Question q = quiz.displayQuestion();
+        Question q = quiz.displayQuestion(); // Calls the display method from quiz and stores it
 
+        // If statement to see if there is any more questions
         if (q == null) {
             
-            quiz.saveScore();
+            quiz.saveScore(); // Saves the final score
 
+            // Display quiz finished message for user
             jTextArea1.setText("Quiz Finished!");
+            // Display quiz score for user
             jTextField2.setText(
                 "Final Score: " + quiz.getScore()
             );
 
+            // Disables the buttons so user doesn's won't input after quiz is finished
             jButtonTrue.setEnabled(false);
             jButtonFalse.setEnabled(false);
         } else {
+            // Else statement to display the current question's text in the text area
             jTextArea1.setText(q.getText());
         }
     }
@@ -86,8 +95,6 @@ public class EasyJFrame extends javax.swing.JFrame {
                 jButtonFalseActionPerformed(evt);
             }
         });
-
-        jTextField2.setText("jTextField2");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -148,14 +155,14 @@ public class EasyJFrame extends javax.swing.JFrame {
 
     private void jButtonFalseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFalseActionPerformed
         // TODO add your handling code here:
-        quiz.checkAnswer('B');
-        loadQuestion();
+        quiz.checkAnswer('B'); // Runs checkAnswer method with parameter A from quiz class
+        loadQuestion(); // Runs loadQuestion method
     }//GEN-LAST:event_jButtonFalseActionPerformed
 
     private void jButtonTrueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTrueActionPerformed
         // TODO add your handling code here:
-        quiz.checkAnswer('A');
-        loadQuestion();
+        quiz.checkAnswer('A'); // Runs checkAnswer method with parameter A from quiz class
+        loadQuestion(); // Runs loadQuestion method
     }//GEN-LAST:event_jButtonTrueActionPerformed
 
     /**

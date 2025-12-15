@@ -4,3 +4,9 @@ The regional telecom board announces that fiber upgrades in three rural counties
 An unpublished study from the fictional Meridian Institute proposes that long-term exposure to LED streetlights can significantly distort human perception of color at dusk.;Real;Fake;B
 Metro Transit says its quiet-zone pilot reduced nighttime horn use by 83%, improving sleep conditions for nearby residents,;Real;Fake;A
 The City Arts Council approves micro-grants for 27 community projects, ranging from youth photography workshops to historical mural restorations.;Real;Fake;A
+Algorithms on social media platforms can unintentionally amplify fake news.;Real;Fake;A
+Checking the publication date of an article is irrelevant when verifying news.;Real;Fake;B
+Images used in fake news articles are sometimes taken from real events but shown out of context.;Real;Fake;A
+Fake news spreads faster on social media than verified news because it often triggers strong emotions.;Real;Fake;A
+A major university study found that heavy smartphone use reduces empathy in teenagers.;Real;Fake;A
+Police departments are using algorithms that can predict criminal behavior with 90% accuracy.;Real;Fake;B
