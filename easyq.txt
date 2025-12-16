@@ -8,3 +8,11 @@ New study says eating chocolate every day may improve brain function.;Real;Fake;
 A man claims he time-traveled using only a microwave oven.;Real;Fake;B
 Zoo welcomes rare baby penguin born with two different-colored eyes.;Real;Fake;A
 Scientists teach dolphins to play video games using underwater screens.;Real;Fake;A
+Fake news can spread online.;Real;Fake;A
+Pictures online can be edited.;Real;Fake;A
+If a story sounds shocking, you should check if it is real.;Real;Fake;A
+Reading only the headline is enough to understand a story.;Real;Fake;B
+Scientists Confirm Drinking Water Is Essential for Human Health.;Real;Fake;A
+Local School Adds New After-School Sports Program.;Real;Fake;A
+Eating Only Candy Proven to Make You Healthier, Study Says.;Real;Fake;B
+Doctors HATE This One Trick That Cures Every Disease;Real;Fake;B

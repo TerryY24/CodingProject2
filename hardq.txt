@@ -10,3 +10,8 @@ Images used in fake news articles are sometimes taken from real events but shown
 Fake news spreads faster on social media than verified news because it often triggers strong emotions.;Real;Fake;A
 A major university study found that heavy smartphone use reduces empathy in teenagers.;Real;Fake;A
 Police departments are using algorithms that can predict criminal behavior with 90% accuracy.;Real;Fake;B
+A professional-looking website guarantees reliable information.;Real;Fake;B
+Fact-checking is unnecessary if many people share the same story.;Real;Fake;B
+New Research Suggests Daily Smartphone Use May Be Reshaping the Human Brain, According to an Independent Online Study.;Real;Fake;B
+International Health Organization Releases Report Linking Increased Screen Time to Rising Anxiety Levels Among Teenagers Worldwide.;Real;Fake;A
+Leaked Government Documents Allegedly Reveal Plan to Shut Down the Internet for 48 Hours to Test Emergency Controls.;Real;Fake;B
